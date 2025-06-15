@@ -1,14 +1,15 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import Providers from '@/components/Providers';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Alexandra Thompson - Law Student Portfolio',
-  description: 'Professional portfolio of Alexandra Thompson, law student and legal professional with experience in corporate law, public defense, and legal aid.',
-  keywords: 'law student, legal professional, portfolio, Columbia Law School, legal experience',
-  authors: [{ name: 'Alexandra Thompson' }],
+  title: 'Habib Maafa - Portfolio',
+  description: 'Personal portfolio of Habib Maafa, finance and law student.',
+  keywords: 'finance, law, portfolio, Habib Maafa',
+  authors: [{ name: 'Habib Maafa' }],
   viewport: 'width=device-width, initial-scale=1',
 };
 
@@ -19,7 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <body className={`${inter.className} antialiased`}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

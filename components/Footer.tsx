@@ -5,20 +5,20 @@ export default function Footer() {
     <footer className="bg-gray-900 text-white py-12">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center">
-          <h3 className="text-2xl font-bold mb-4">Alexandra Thompson</h3>
+          <h3 className="text-2xl font-bold mb-4">Habib Maafa</h3>
           <p className="text-gray-400 mb-6">
-            Dedicated law student with a passion for justice and legal excellence
+            Finance and law student passionate about international business and legal studies
           </p>
           <div className="flex justify-center space-x-8 mb-8">
-            <a 
-              href="mailto:alexandra.thompson@law.columbia.edu" 
+            <a
+              href="mailto:habib.maafa@gmail.com"
               className="text-gray-400 hover:text-white transition-colors duration-200"
             >
-              alexandra.thompson@law.columbia.edu
+              habib.maafa@gmail.com
             </a>
-            <a 
-              href="https://linkedin.com/in/alexandra-thompson-law" 
-              target="_blank" 
+            <a
+              href="https://www.linkedin.com/in/habib-maafa/"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors duration-200"
             >
@@ -27,7 +27,7 @@ export default function Footer() {
           </div>
           <div className="border-t border-gray-800 pt-8">
             <p className="text-gray-500 text-sm">
-              © {new Date().getFullYear()} Alexandra Thompson. All rights reserved.
+              © {new Date().getFullYear()} Habib Maafa. All rights reserved.
             </p>
           </div>
         </div>

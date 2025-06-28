@@ -21,4 +21,3 @@ Personal portfolio for **Habib Maafa** built with Next.js and Tailwind CSS.
 - Sections for work experience and education
 - Each experience links to its dedicated page
 
-Feel free to fork this project and adapt it to your needs.

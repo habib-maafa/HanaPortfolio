@@ -3,9 +3,25 @@
 import { motion } from "framer-motion";
 import { Star, MapPin, Calendar } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import Link from "next/link";
 
-export default function EntryCard({ entry, type = "work" }) {
-  const renderStars = (rating) => {
+interface Entry {
+  id: number;
+  position?: string;
+  degree?: string;
+  company?: string;
+  institution?: string;
+  startDate: string;
+  endDate: string;
+  location: string;
+  tasks: string[];
+  rating: number;
+  recommendations?: { text: string; author: string }[];
+  imageUrl?: string;
+}
+
+export default function EntryCard({ entry, type = "work" }: { entry: Entry; type?: "work" | "education" }) {
+  const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (
       <Star
         key={i}
@@ -20,17 +36,18 @@ export default function EntryCard({ entry, type = "work" }) {
   const organization = type === "work" ? entry.company : entry.institution;
 
   return (
-    <motion.div
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.998 }}
-      transition={{ duration: 0.2 }}
-      tabIndex={0}
-      className="focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"
-      onFocus={(e) => e.target.style.transform = "scale(1.02)"}
-      onBlur={(e) => e.target.style.transform = "scale(1)"}
-    >
-      <Card className="h-full hover:shadow-lg transition-all duration-200 border-gray-200 hover:border-blue-200 hover:shadow-blue-50">
-        <CardHeader className="pb-4">
+    <Link href={`/experience/${entry.id}`} target="_blank">
+      <motion.div
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.998 }}
+        transition={{ duration: 0.2 }}
+        tabIndex={0}
+        className="focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg"
+        onFocus={(e) => (e.currentTarget.style.transform = 'scale(1.02)')}
+        onBlur={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+      >
+        <Card className="h-full hover:shadow-lg transition-all duration-200 border-gray-200 hover:border-blue-200 hover:shadow-blue-50">
+          <CardHeader className="pb-4">
           <div className="flex items-start justify-between">
             <div className="flex-1">
               <h3 className="text-xl font-semibold text-gray-900 mb-1">{title}</h3>
@@ -93,5 +110,6 @@ export default function EntryCard({ entry, type = "work" }) {
         </CardContent>
       </Card>
     </motion.div>
+    </Link>
   );
 }
